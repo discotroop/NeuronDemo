@@ -56,15 +56,15 @@ class Newsletter extends React.Component {
     console.log(location);
 
     // fetch data from api based on custom URL
-    fetch(`https://secure-cliffs-97248.herokuapp.com/api${location}`).then(
-      res => {
+    fetch(`https://secure-cliffs-97248.herokuapp.com/api${location}`)
+      .then(res => res.json())
+      .then(res => {
         console.log(res);
         this.setState({
           apiResponse: res.data[0]
         });
         console.log(this.state.apiResponse);
-      }
-    );
+      });
   }
 
   // Live data from API
