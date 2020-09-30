@@ -69,9 +69,10 @@ class Newsletter extends React.Component {
                 newsletter_id: this.state.newsletter_id
               })
               .then(res => {
+                console.log(this.props.location);
                 this.setState({
                   newURL:
-                    "http://localhost:3000/select/" +
+                    "https://damp-sierra-80013.herokuapp.com/select/" +
                     res.data.article.article_URL
                 });
                 console.log(res);
