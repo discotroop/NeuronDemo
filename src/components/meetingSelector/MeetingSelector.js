@@ -53,17 +53,18 @@ class Newsletter extends React.Component {
   // handle calling api
   fetchDataFromAPI() {
     let location = this.props.location.pathname;
-    console.log(location)
+    console.log(location);
 
     // fetch data from api based on custom URL
-    fetch(`https://damp-sierra-80013.herokuapp.com/api${location}`)
-      .then(res => res.json())
-      .then(res => {
+    fetch(`https://damp-sierra-80013.herokuapp.com/api${location}`).then(
+      res => {
+        console.log(res);
         this.setState({
           apiResponse: res.data[0]
         });
         console.log(this.state.apiResponse);
-      });
+      }
+    );
   }
 
   // Live data from API
