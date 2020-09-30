@@ -55,7 +55,7 @@ class Newsletter extends React.Component {
     let location = this.props.location.pathname;
 
     // fetch data from api based on custom URL
-    fetch(`http://localhost:8000/api/${location}`)
+    fetch(`https://damp-sierra-80013.herokuapp.com/api/${location}`)
       .then(res => res.json())
       .then(res => {
         this.setState({
